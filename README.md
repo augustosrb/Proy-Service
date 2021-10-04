@@ -28,9 +28,9 @@ https://proyservicegui.herokuapp.com/alumno
 {
 "nombre": "Nombre",
 "edad": 18
-}
 
-https://raw.githubusercontent.com/augustosrb/proy-service/main/assets/post-OK.jpg
+![Alt text](https://raw.githubusercontent.com/augustosrb/proy-service/main/assets/post-OK.jpg "Registro")
+
 
 Validando edad
 https://raw.githubusercontent.com/augustosrb/proy-service/main/assets/post.jpg
