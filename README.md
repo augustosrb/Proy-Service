@@ -4,7 +4,7 @@ Este proyecto registra alumnos, validando la edad solo para mayores de 17 años.
 
 Se desplegaron 2 servicios, uno que realiza el crud y otro que contiene la lógica de las validaciones.
 
-## Ejecutando las pruebas SWAGGER 📋
+## Ejecutando las pruebas en SWAGGER 📋
 
 Usar el servicio Backend, crud sin validaciones.
 
@@ -12,10 +12,6 @@ https://proyservice.herokuapp.com/swagger-ui.html
 
 
 ## Ejecutando las pruebas POSTMAN⚙️
-
-Para validar solo el crud sin validaciones
-
-https://proyservice.herokuapp.com/swagger-ui.html
 
 Ingresar a postman para consumir el servicio
 
