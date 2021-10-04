@@ -28,6 +28,7 @@ public class AlumnoController extends AbstractHandler {
 	RestTemplate restTemplate;
 
 	private static final String url = "https://proyservice.herokuapp.com/alumno";
+	private static final int edadLimite = 17;
 
 	@GetMapping("/alumno")
 	public JsonMessageResult consultarAlumno() {
@@ -49,7 +50,12 @@ public class AlumnoController extends AbstractHandler {
 			RestTemplate restTemplate = new RestTemplate();
 			Alumno res = restTemplate.getForObject(url + "/" + id, Alumno.class);
 
-			return resultSuccessList(res);
+			if (res == null) {
+				return result("No existe el código ingresado.");
+			}else
+			{
+				return resultSuccessList(res);
+			}
 		} catch (Exception e) {
 			return resultFail(e.getMessage());
 		}
@@ -59,7 +65,7 @@ public class AlumnoController extends AbstractHandler {
 	@PostMapping(value = "/alumno", consumes = { MediaType.APPLICATION_JSON_VALUE }, produces = {
 			MediaType.APPLICATION_JSON_VALUE })
 	public JsonMessageResult registrarAlumno(@RequestBody Alumno alumno) {
-		int edadLimite = 50;
+		
 		try {
 			if (alumno.equals(null)) {
 				return result("Ingresar datos del Alumno.");
@@ -89,11 +95,23 @@ public class AlumnoController extends AbstractHandler {
 				return result("Ingrese código del alumno.");
 
 			} else {
-
 				RestTemplate restTemplate = new RestTemplate();
-				HttpEntity<Alumno> request = new HttpEntity<>(alumno);
-				restTemplate.postForObject(url, request, Alumno.class);
-				return resultSuccessUpdate(alumno);
+				Alumno resalumno = restTemplate.getForObject(url + "/" + alumno.getCodigo(), Alumno.class);
+
+				if (resalumno == null) {
+					return result("No existe el código ingresado.");
+				}else
+				{
+					if(alumno.getEdad()>edadLimite) {
+						HttpEntity<Alumno> request = new HttpEntity<>(alumno);
+						restTemplate.postForObject(url, request, Alumno.class);
+						return resultSuccessUpdate(alumno);
+					}
+					else
+					{
+						return result("Ingresar solo personas mayores de " + edadLimite + " años.");
+					}
+				}
 
 			}
 		} catch (Exception e) {
