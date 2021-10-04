@@ -17,7 +17,7 @@ https://proyservicegui.herokuapp.com/alumno
 
 ![Alt text](https://raw.githubusercontent.com/augustosrb/proy-service/main/assets/GET.jpg)
 
-### GET: Consulta los alumnos por codigo, validando que el código ingresado exista.
+### GET: Consulta los alumnos por código, validando que el código ingresado exista.
 https://proyservicegui.herokuapp.com/alumno
 
 ![Alt text](https://raw.githubusercontent.com/augustosrb/proy-service/main/assets/getID.jpg)
