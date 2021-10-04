@@ -56,7 +56,7 @@ https://proyservicegui.herokuapp.com/alumno
 
 Validando edad
 
-![Alt text](https://raw.githubusercontent.com/augustosrb/proy-service/main/assets/putOK.jpg)
+![Alt text](https://raw.githubusercontent.com/augustosrb/proy-service/main/assets/putFAIL.jpg)
 
 ### DELETE: Elimina alumnos por código validando que exista.
 
